@@ -18,6 +18,13 @@ add-apt-repository \
    stable"
 apt-get update
 apt-get install docker-ce docker-ce-cli containerd.io
+# Tmux
+apt-get install tmux
+# Signal
+curl -s https://updates.signal.org/desktop/apt/keys.asc | apt-key add -
+echo "deb [arch=amd64] https://updates.signal.org/desktop/apt xenial main" | tee -a /etc/apt/sources.list.d/signal-xenial.list
+apt update 
+apt install signal-desktop
 # Spotify
 curl -sS https://download.spotify.com/debian/pubkey.gpg | apt-key add - 
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
