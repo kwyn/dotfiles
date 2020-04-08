@@ -30,3 +30,12 @@ curl -sS https://download.spotify.com/debian/pubkey.gpg | apt-key add -
 echo "deb http://repository.spotify.com stable non-free" | tee /etc/apt/sources.list.d/spotify.list
 apt-get update
 apt-get install spotify-client
+# Slack
+curl -o slack.deb https://downloads.slack-edge.com/linux_releases/slack-desktop-4.0.2-amd64.deb
+apt install ./slack.deb
+rm ./slack.deb
+# Shotwell
+add-apt-repository ppa:yg-jensge/shotwell
+apt-get update
+apt-get install shotwell
+
